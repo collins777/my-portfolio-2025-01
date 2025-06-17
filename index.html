@@ -21,11 +21,11 @@
       <div class="navbar">
         <div class="logo">BRANDON COLLINS</div>
         <nav id="navLinks" class="nav-links">
-          <a href="#">SERVICES</a>
-          <a href="#">TECHNOLOGIES</a>
-          <a href="#">PORTFOLIO</a>
-          <a href="#">CONTACT</a>
-          <div class="language-toggle">ENG</div>
+          <a href="#services">SERVICES</a>
+          <a href="#technologies">TECHNOLOGIES</a>
+          <a href="#projects">PORTFOLIO</a>
+          <a href="#contact">CONTACT</a>
+          <!-- <div class="language-toggle">ENG</div> -->
         </nav>
         <div class="hamburger" id="hamburgerBtn" aria-label="Open navigation" tabindex="0">
           <span></span>
@@ -88,10 +88,8 @@
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg" />
                 <!-- GITHUB -->
                 <i class="devicon-github-original"></i>
-              
                 <!-- GULP -->
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gulp/gulp-plain.svg" />
-               
                 <!-- REACT -->
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" />
                 <!-- REDUX -->
@@ -131,7 +129,6 @@
     </section>
      <!-- ------------------------------------- CONTACT SECTION -->
       <div id="contact">
-
         <div class="contact">
           <h2>CONTACT ME</h2>
           <p>
@@ -145,39 +142,7 @@
           </form>
         </div>
       </div>
-      <script>
-        const hamburger = document.getElementById('hamburgerBtn');
-        const navLinks = document.getElementById('navLinks');
-        let menuOpen = false;
-
-        function toggleMenu() {
-          menuOpen = !menuOpen;
-          if (menuOpen) {
-            navLinks.classList.add('mobile');
-          } else {
-            navLinks.classList.remove('mobile');
-          }
-        }
-
-        hamburger.addEventListener('click', toggleMenu);
-        hamburger.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') toggleMenu();
-        });
-
-        // Optional: close menu when clicking a link (mobile only)
-        navLinks.addEventListener('click', (e) => {
-          if (menuOpen && e.target.tagName === 'A') {
-            toggleMenu();
-          }
-        });
-
-        // Optional: close menu on resize
-        window.addEventListener('resize', () => {
-          if (window.innerWidth > 700 && menuOpen) {
-            menuOpen = false;
-            navLinks.classList.remove('mobile');
-          }
-        });
-      </script>
+   <!-- JS -->
+  <script src="script.js"></script>
   </body>
 </html>
