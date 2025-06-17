@@ -20,13 +20,18 @@
     <header id="header">
       <div class="navbar">
         <div class="logo">BRANDON COLLINS</div>
-        <nav class="nav-links">
+        <nav id="navLinks" class="nav-links">
           <a href="#">SERVICES</a>
           <a href="#">TECHNOLOGIES</a>
           <a href="#">PORTFOLIO</a>
           <a href="#">CONTACT</a>
           <div class="language-toggle">ENG</div>
         </nav>
+        <div class="hamburger" id="hamburgerBtn" aria-label="Open navigation" tabindex="0">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
     <!-- ------------------------------------- HERO SECTION -->
@@ -145,5 +150,39 @@
           </form>
         </div>
       </div>
+      <script>
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        let menuOpen = false;
+
+        function toggleMenu() {
+          menuOpen = !menuOpen;
+          if (menuOpen) {
+            navLinks.classList.add('mobile');
+          } else {
+            navLinks.classList.remove('mobile');
+          }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        hamburger.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') toggleMenu();
+        });
+
+        // Optional: close menu when clicking a link (mobile only)
+        navLinks.addEventListener('click', (e) => {
+          if (menuOpen && e.target.tagName === 'A') {
+            toggleMenu();
+          }
+        });
+
+        // Optional: close menu on resize
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 700 && menuOpen) {
+            menuOpen = false;
+            navLinks.classList.remove('mobile');
+          }
+        });
+      </script>
   </body>
 </html>
