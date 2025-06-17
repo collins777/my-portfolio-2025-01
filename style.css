@@ -272,7 +272,14 @@ section {
   margin: 24px auto 0 auto;
 }
 
-.technologies-container img {
+.devicon-github-original {
+  font-size: 80px; /* Adjust size to match other icons */
+  width: 80px; /* Optional for consistency */
+  height: 80px; /* Optional for consistency */
+}
+
+.technologies-container img,
+.devicon-github-original {
   width: 80px;
   max-width: 100%;
   height: auto;
@@ -281,7 +288,8 @@ section {
   transition: transform 0.2s;
 }
 
-.technologies-container img:hover {
+.technologies-container img:hover,
+.devicon-github-original:hover {
   transform: scale(1.08) rotate(-4deg);
 }
 
